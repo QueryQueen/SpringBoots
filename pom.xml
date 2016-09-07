@@ -3,14 +3,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.example</groupId>
-	<artifactId></artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<groupId>com.joedid.app</groupId> <!-- This is the package name -->
+	<artifactId>springboots</artifactId> <!-- This is the name of the end file without version nr -->
+	<version>0.0.1-SNAPSHOT</version> <!-- This is the version number -->
+	<packaging>jar</packaging>	<!--  This specifies how we want our file to be packaged -->
 
 	<name>Spring Boots</name>
 	<description>Demo project for Spring Boot</description>
 
+	<!-- 	The parent is another POM file that encapsulates our POM file.
+			We will inherit from the spring boot starter paren
+			And this will make things easier for us							
+	-->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -18,38 +22,30 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
+	<!-- This was genereted by Spring Boot for me -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.7</java.version>
 	</properties>
-
+	
+	<!-- List of all dependencies to download & manage -->
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+		</dependency>		
 	</dependencies>
-
+	
+	<!-- List of all plugins -->
 	<build>
 		<plugins>
 			<plugin>
